@@ -1,8 +1,8 @@
 #!/bin/sh
 
-p1="$( ping -c5 192.168.0.1 | grep "packet loss" | sed "s/.*received, //" | sed "s/%.*time /,/" | sed "s/ms//" | sed "s/+5 errors, //g")"
-p2="$( ping -c5 1.1.1.1 | grep "packet loss" | sed "s/.*received, //" | sed "s/%.*time /,/" | sed "s/ms//" | sed "s/+5 errors, //g")"
-p3="$( ping -c5 8.8.8.8 | grep "packet loss" | sed "s/.*received, //" | sed "s/%.*time /,/" | sed "s/ms//" | sed "s/+5 errors, //g")"
+p1="$( ping -c5 192.168.0.1 | grep "packet loss" | sed "s/.*received, //" | sed "s/%.*time /,/" | sed "s/ms//" | sed "s/+.* errors, //g")"
+p2="$( ping -c5 1.1.1.1 | grep "packet loss" | sed "s/.*received, //" | sed "s/%.*time /,/" | sed "s/ms//" | sed "s/+.* errors, //g")"
+p3="$( ping -c5 8.8.8.8 | grep "packet loss" | sed "s/.*received, //" | sed "s/%.*time /,/" | sed "s/ms//" | sed "s/+.* errors, //g")"
 
 t="$(date +%d-%m-%Y_%H:%M:%S)"
 
