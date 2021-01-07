@@ -19,4 +19,4 @@ if [ ${#p3} -lt 3 ]
     p3="100,100"
 fi
 
-echo "$t,$p1,$p2,$p3" >> /var/www/html/ping_log/ping_log.csv
+echo "$t,$p1,$p2,$p3" | sed 's/\x0//g' >> /var/www/html/ping_log/ping_log.csv
